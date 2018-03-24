@@ -1,0 +1,96 @@
+[dataset name]
+# the full folder name will be dataset + '_datasets_hdf5'
+dataset = ./datasets/Multi_organs
+
+
+[image path]
+imgs_train_dir = /training/image/
+gt_train_dir = /training/gt/
+mask_train_dir = /training/mask/
+
+imgs_test_dir = /test/image/
+gt_test_dir = /test/gt/
+mask_test_dir = /test/mask/
+
+
+[hdf5 files]
+train_images_file = imgs_train.hdf5
+train_gt_file = groundTruth_train.hdf5
+train_masks_file = masks_train.hdf5
+test_images_file = imgs_test.hdf5
+test_gt_file = groundTruth_test.hdf5
+test_masks_file = masks_test.hdf5
+
+
+[image properties]
+channels = 3
+train_height = 1000
+train_width = 1000
+category = 3
+test_height = 1000
+test_width = 1000
+
+
+[experiment name]
+name = test1
+net = unet
+
+
+[data attributes]
+#Dimensions of the patches extracted from the full images
+patch_height = 128
+patch_width = 128
+
+
+[training settings]
+#number of training images
+n_train_images = 12
+#number of total patches
+n_patches = 6000
+#Number of training epochs
+n_epochs = 300
+batch_size = 16
+split = 8
+use_rescale = 1
+GPU_num = 1
+fine_tuning = 0
+pretrain_model = 0
+blur = 0
+rotate = 1
+flip = 1
+shift = 1
+random = 1
+augment = 1
+deformation = 1
+shuffle = 1
+
+
+[testing settings]
+#test result dir
+test_result_path = 1
+#use real prediction result or label
+real_value = 1
+#Choose the model to test: best==epoch with min loss, last==last epoch, 1 means best, 0 means last, >1 means a sepcific epoch
+best_last = 1
+#number of full images for the test
+n_test_images = 14
+#Compute average in the prediction, improve results but require more patches to be predicted, 1 means average_mode
+average_mode = 1
+#Only if average_mode==True. Stride for patch extraction, lower value require more patches to be predicted, stride should be
+#less than patch size
+stride_height = 64
+stride_width = 64
+
+
+[others]
+
+preprocess = 0
+# nohup means the stdout will be directed to a file
+train_nohup = 0
+test_nohup = 0
+# weighted loss mode, 0 means no, 1 means square, 2 means linear, 3 means sqrt, 4 means border is 0.
+loss_weight = 1
+# for loss_weight mode 
+border = 92
+use_sample_weight = 0
+positive_weight = 1
