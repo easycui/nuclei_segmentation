@@ -36,4 +36,4 @@ It will generate a folder name '1' in 'test1'. The predictions will be shown in 
 You may modify configuration.txt to change the experiement settings.
 
 ## Licence
-The code is liscensed under [MIT](https://github.com/easycui/nuclei_segmentation/blob/master/LICENSE). Copyright (c) 2018
+The code is liscensed under [MIT](https://github.com/easycui/nuclei_segmentation/blob/master/LICENSE). Copyright (c) 2018。　The dataset is downloaded from https://nucleisegmentationbenchmark.weebly.com/dataset.html.
