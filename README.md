@@ -34,3 +34,6 @@ python run_training.py
 ```
 It will generate a folder name '1' in 'test1'. The predictions will be shown in it.
 You may modify configuration.txt to change the experiement settings.
+
+## Licence
+The code is liscensed under [MIT](https://github.com/easycui/nuclei_segmentation/master/LICENSE). Copyright (c) 2018
